@@ -43,11 +43,14 @@ namespace ApiIntegration
                     var pushLaps = dataProcessingService.GetPushLaps(laps);
                     Guard.AgainstNullOrEmptyLaps(pushLaps);
 
-                    dataProcessingService.LogAvarageLapTime(pushLaps);
-                    Console.WriteLine();
-                    dataProcessingService.LogLapTimes(pushLaps);
-                    Console.WriteLine();
-                    dataProcessingService.LogGroupLapsByDuration(pushLaps);
+                    var printingService = new PrintingService();
+                    var avarageLapTime = dataProcessingService.GetAvarageLapTime(pushLaps);
+                    printingService.PrintAvarageLapTime(avarageLapTime, pushLaps.Count);
+
+                    printingService.PrintLapTimes(pushLaps);
+
+                    var groupedLaps = dataProcessingService.GetGroupLapsByDuration(pushLaps);
+                    printingService.PrintGroupedLaps(groupedLaps);
                 }
             }
             catch (ArgumentException ex)
