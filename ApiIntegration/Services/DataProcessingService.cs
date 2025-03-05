@@ -8,7 +8,6 @@ namespace ApiIntegration.Services
         public double? GetAvarageLapTime(IReadOnlyList<Lap> pushLaps)
             => pushLaps.Sum(l => l.LapDuration) / pushLaps.Count;
 
-
         public IReadOnlyList<Lap> GetPushLaps(IReadOnlyList<Lap> laps)
             => laps
                 .Where(l => l.LapDuration is not null && l.LapDuration < pushLapDurationTreshold)
