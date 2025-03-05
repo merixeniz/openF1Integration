@@ -49,7 +49,7 @@ namespace ApiIntegration
 
                     printingService.PrintLapTimes(pushLaps);
 
-                    var groupedLaps = dataProcessingService.GetGroupLapsByDuration(pushLaps);
+                    var groupedLaps = dataProcessingService.GroupLapsByDuration(pushLaps);
                     printingService.PrintGroupedLaps(groupedLaps);
                 }
             }

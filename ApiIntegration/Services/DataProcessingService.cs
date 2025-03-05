@@ -14,7 +14,7 @@ namespace ApiIntegration.Services
                 .Where(l => l.LapDuration is not null && l.LapDuration < pushLapDurationTreshold)
                 .ToList();
 
-        public IDictionary<string, int> GetGroupLapsByDuration(IReadOnlyList<Lap> pushLaps)
+        public IDictionary<string, int> GroupLapsByDuration(IReadOnlyList<Lap> pushLaps)
             => pushLaps
                 .Where(l => l.LapDuration is not null)
                 .GroupBy(l => (int)l.LapDuration)

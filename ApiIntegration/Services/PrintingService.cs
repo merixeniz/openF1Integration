@@ -6,7 +6,7 @@ namespace ApiIntegration.Services
     {
         public void PrintAvarageLapTime(double? avarageLapTime, int lapsCount)
         {
-            Console.WriteLine($"Avarage Lap Time: {Math.Round((decimal)avarageLapTime.GetValueOrDefault(), 3)} s, Laps Count: {lapsCount}");
+            Console.WriteLine($"Avarage Lap Time: {Math.Round((decimal)avarageLapTime.GetValueOrDefault(), 3)} s, Push laps count: {lapsCount}");
             Console.WriteLine();
         }
         public void PrintLapTimes(IReadOnlyList<Lap> laps)
